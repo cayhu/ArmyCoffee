@@ -22,11 +22,22 @@ object DatabaseFactory {
         val database = Database.connect(createHikariDataSource(jdbcURL, user, password))
 
         transaction(database) {
-            SchemaUtils.create(Categories, Products, Orders, OrderItems)
+            SchemaUtils.create(Categories, Products, Orders, OrderItems, Users, Employees)
             // Seed data if empty
             if (Categories.selectAll().empty()) {
                 Categories.insert { it[name] = "Cà phê" }
                 Categories.insert { it[name] = "Trà sữa" }
+                Categories.insert { it[name] = "Trà trái cây" }
+                Categories.insert { it[name] = "Đồ uống nóng" }
+                Categories.insert { it[name] = "Thức ăn" }
+            }
+            if (Users.selectAll().empty()) {
+                Users.insert {
+                    it[username] = "admin"
+                    it[password] = "1234"
+                    it[fullName] = "Administrator"
+                    it[role] = "ADMIN"
+                }
             }
         }
     }

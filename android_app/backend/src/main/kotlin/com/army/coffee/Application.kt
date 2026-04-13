@@ -35,6 +35,31 @@ fun Application.module() {
         }
 
         route("/api") {
+            post("/login") {
+                val credentials = call.receive<Map<String, String>>()
+                val username = credentials["username"]
+                val password = credentials["password"]
+
+                val user = DatabaseFactory.dbQuery {
+                    Users.select { (Users.username eq username!!) and (Users.password eq password!!) }
+                        .map {
+                            UserDTO(
+                                id = it[Users.id],
+                                username = it[Users.username],
+                                full_name = it[Users.fullName],
+                                role = it[Users.role],
+                                avatar = it[Users.avatar]
+                            )
+                        }.singleOrNull()
+                }
+
+                if (user != null) {
+                    call.respond(LoginResponseDTO(user = user))
+                } else {
+                    call.respond(io.ktor.http.HttpStatusCode.Unauthorized, "Sai tài khoản hoặc mật khẩu")
+                }
+            }
+
             get("/products") {
                 val productsList = DatabaseFactory.dbQuery {
                     (Products innerJoin Categories)
@@ -53,6 +78,34 @@ fun Application.module() {
                         }
                 }
                 call.respond(productsList)
+            }
+
+            get("/categories") {
+                val categoriesList = DatabaseFactory.dbQuery {
+                    Categories.selectAll().map {
+                        CategoryDTO(
+                            id = it[Categories.id],
+                            name = it[Categories.name],
+                            icon = "☕" // Default icon
+                        )
+                    }
+                }
+                call.respond(categoriesList)
+            }
+
+            get("/employees") {
+                val employeesList = DatabaseFactory.dbQuery {
+                    Employees.selectAll().map {
+                        EmployeeDTO(
+                            id = it[Employees.id],
+                            name = it[Employees.name],
+                            role = it[Employees.role],
+                            email = it[Employees.email],
+                            status = it[Employees.status]
+                        )
+                    }
+                }
+                call.respond(employeesList)
             }
 
             post("/orders") {

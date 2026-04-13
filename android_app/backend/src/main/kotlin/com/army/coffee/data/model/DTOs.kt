@@ -15,14 +15,32 @@ data class ProductDTO(
 )
 
 @Serializable
-data class OrderDTO(
-    val id: Int? = null,
-    val order_code: String,
-    val total: Double,
-    val payment_method: String,
-    val status: String,
-    val created_at: String? = null,
-    val item_count: Int,
-    val cashier: String,
-    val customer: String = "Khách vãng lai"
+data class CategoryDTO(
+    val id: Int,
+    val name: String,
+    val icon: String
+)
+
+@Serializable
+data class EmployeeDTO(
+    val id: Int,
+    val name: String,
+    val role: String,
+    val email: String,
+    val status: String
+)
+
+@Serializable
+data class UserDTO(
+    val id: Int,
+    val username: String,
+    val full_name: String,
+    val role: String,
+    val avatar: String? = null
+)
+
+@Serializable
+data class LoginResponseDTO(
+    val user: UserDTO,
+    val access_token: String = "fake-token-123"
 )
