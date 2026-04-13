@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.army.coffee.app-debug-57:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.army.coffee.app-main-59:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.army.coffee.app-debug-57:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.army.coffee.app-main-59:/mipmap-anydpi-v26/ic_launcher.xml"
+    }
+]

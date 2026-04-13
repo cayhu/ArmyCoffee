@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.example.armycoffee.app-merged_res-50:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.armycoffee.app-main-52:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.armycoffee.app-merged_res-50:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.armycoffee.app-main-52:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.armycoffee.app-merged_res-50:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.armycoffee.app-main-52:/mipmap-anydpi-v26/ic_launcher.xml"
+    }
+]

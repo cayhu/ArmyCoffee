@@ -4,7 +4,44 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed61d513-1fc4-417f-8682-36fbb14af373" name="Changes" comment="" />
+    <list default="true" id="3deb1f01-c6d6-42c5-aa2b-92671c1e48c2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/deadlineLeMinhTan.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/AndroidProjectSystem.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/armycoffee/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/armycoffee/data/api/ApiService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/armycoffee/data/model/Product.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/armycoffee/data/model/User.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/armycoffee/ui/screens/LoginScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/armycoffee/ui/screens/MenuScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/xml/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../mysql-connector-j-8.0.32/mysql-connector-j-8.0.32/src/build/build.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../mysql-connector-j-8.0.32/mysql-connector-j-8.0.32/src/demo/demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../mysql-connector-j-8.0.32/mysql-connector-j-8.0.32/src/generated/generated.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../mysql-connector-j-8.0.32/mysql-connector-j-8.0.32/src/legacy/legacy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../mysql-connector-j-8.0.32/mysql-connector-j-8.0.32/src/main/core-api/core-api.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../mysql-connector-j-8.0.32/mysql-connector-j-8.0.32/src/main/core-impl/core-impl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../mysql-connector-j-8.0.32/mysql-connector-j-8.0.32/src/main/protocol-impl/protocol-impl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../mysql-connector-j-8.0.32/mysql-connector-j-8.0.32/src/main/user-api/user-api.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../mysql-connector-j-8.0.32/mysql-connector-j-8.0.32/src/main/user-impl/user-impl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../mysql-connector-j-8.0.32/mysql-connector-j-8.0.32/src/test/test.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,14 +50,18 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
   "associatedIndex": 4
 }]]></component>
-  <component name="ProjectId" id="3CJeGwYjaT5kAZT3cOnOfOPFtZd" />
+  <component name="ProjectId" id="3CFdnVRS9naBu3wwfnVxKz7SVZN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,20 +73,20 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ASUS/Downloads/deadlineLeMinhTan/android_app"
   }
 }]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ed61d513-1fc4-417f-8682-36fbb14af373" name="Changes" comment="" />
-      <created>1776108009740</created>
+      <changelist id="3deb1f01-c6d6-42c5-aa2b-92671c1e48c2" name="Changes" comment="" />
+      <created>1775985420148</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1776108009740</updated>
+      <updated>1775985420148</updated>
     </task>
     <servers />
   </component>

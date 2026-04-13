@@ -1,9 +1,0 @@
-{
-  "build": {
-    "type": "gradle",
-    "goal": "shadowJar"
-  },
-  "deploy": {
-    "jarName": "build/libs/army-coffee-backend-0.0.1-all.jar"
-  }
-}
