@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3deb1f01-c6d6-42c5-aa2b-92671c1e48c2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/src/main/kotlin/com/army/coffee/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/army/coffee/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/kotlin/com/army/coffee/data/DatabaseFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/army/coffee/data/DatabaseFactory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/kotlin/com/army/coffee/data/model/DTOs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/army/coffee/data/model/DTOs.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
