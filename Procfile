@@ -1,1 +1,1 @@
-web: ./gradlew :backend:run
+web: java -jar backend/build/libs/army-coffee-backend-0.0.1-all.jar
