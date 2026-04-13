@@ -14,13 +14,19 @@ import kotlinx.serialization.json.Json
 import org.jetbrains.exposed.sql.*
 
 fun main() {
-    DatabaseFactory.init()
-    embeddedServer(Netty, port = System.getenv("PORT")?.toInt() ?: 8080) {
+    val port = System.getenv("PORT")?.toInt() ?: 8080
+    embeddedServer(Netty, port = port, host = "0.0.0.0") {
         module()
     }.start(wait = true)
 }
 
 fun Application.module() {
+    try {
+        DatabaseFactory.init()
+    } catch (e: Exception) {
+        log.error("Database connection failed: ${e.message}")
+    }
+
     install(ContentNegotiation) {
         json(Json {
             prettyPrint = true
