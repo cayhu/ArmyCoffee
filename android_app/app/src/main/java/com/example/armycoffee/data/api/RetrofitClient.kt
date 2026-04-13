@@ -4,8 +4,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    // Sử dụng URL mới từ Clever Cloud
-    private const val BASE_URL = "https://app-ccfacb40-46b5-4be9-afea-a58f4d9693f3.cleverapps.io/"
+    // URL chuẩn của Clever Cloud cho Army Coffee
+    private const val BASE_URL = "https://app-18f6a634-7465-4cc4-847f-107517c51b3c.cleverapps.io/api/"
 
     val instance: ApiService by lazy {
         val retrofit = Retrofit.Builder()
