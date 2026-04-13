@@ -1,10 +1,10 @@
 package com.army.coffee.data.api
 
-import com.army.coffee.data.model.Order
-import com.army.coffee.data.model.Product
-import com.army.coffee.data.model.Category
-import com.army.coffee.data.model.Employee
-import com.army.coffee.data.model.User
+import com.example.armycoffee.data.model.Order
+import com.example.armycoffee.data.model.Product
+import com.example.armycoffee.data.model.Category
+import com.example.armycoffee.data.model.Employee
+import com.example.armycoffee.data.model.User
 import retrofit2.http.*
 
 interface ApiService {
