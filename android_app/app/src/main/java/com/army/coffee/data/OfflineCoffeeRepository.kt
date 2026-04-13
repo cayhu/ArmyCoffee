@@ -4,7 +4,7 @@ import com.army.coffee.data.dao.CoffeeDao
 import com.army.coffee.data.entities.*
 import kotlinx.coroutines.flow.Flow
 
-class OfflineCoffeeRepository(private val coffeeDao: CoffeeDao) {
+class OfflineCoffeeRepository(private val coffeeDao: CoffeeDao) : CoffeeRepository {
     fun getAllCategoriesStream(): Flow<List<Category>> = coffeeDao.getAllCategories()
 
     fun getAllProductsStream(): Flow<List<Product>> = coffeeDao.getAllProducts()

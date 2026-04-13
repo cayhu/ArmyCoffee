@@ -9,7 +9,9 @@ import com.army.coffee.ArmyCoffeeApplication
 object AppViewModelProvider {
     val Factory = viewModelFactory {
         initializer {
-            CoffeeViewModel(armyCoffeeApplication().container.coffeeRepository)
+            // Đổi sang networkRepository để dùng dữ liệu Cloud, 
+            // hoặc giữ coffeeRepository để dùng SQLite local
+            CoffeeViewModel(armyCoffeeApplication().container.networkRepository)
         }
     }
 }

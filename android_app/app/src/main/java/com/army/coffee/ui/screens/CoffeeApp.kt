@@ -100,14 +100,32 @@ fun TableItem(table: CoffeeTable, onClick: () -> Unit) {
 @Composable
 fun OrderScreen(viewModel: CoffeeViewModel) {
     val uiState by viewModel.uiState.collectAsState()
+    var showCartDialog by remember { mutableStateOf(false) }
 
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Button(onClick = { viewModel.selectTable(null) }) {
-                Text("<")
+            IconButton(onClick = { viewModel.selectTable(null) }) {
+                Text("<", style = MaterialTheme.typography.headlineMedium)
             }
             Spacer(modifier = Modifier.width(8.dp))
-            Text("Bàn: ${uiState.selectedTable?.name}", style = MaterialTheme.typography.headlineSmall)
+            Column {
+                Text("Bàn: ${uiState.selectedTable?.name}", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+                if (uiState.selectedTable?.isOccupied == true) {
+                    Text("Đang có khách", color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
+                }
+            }
+            Spacer(modifier = Modifier.weight(1f))
+            if (uiState.selectedTable?.isOccupied == true) {
+                Button(
+                    onClick = { 
+                        viewModel.updateTableStatus(uiState.selectedTable!!.id, false)
+                        viewModel.selectTable(null)
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
+                ) {
+                    Text("Trả bàn")
+                }
+            }
         }
         
         Spacer(modifier = Modifier.height(16.dp))
@@ -135,12 +153,32 @@ fun OrderScreen(viewModel: CoffeeViewModel) {
             }
         }
 
-        HorizontalDivider()
+        HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
         
         // Cart Summary
         if (uiState.cart.isNotEmpty()) {
-            CartSummary(cart = uiState.cart, onCheckout = { viewModel.checkout() })
+            CartSummary(
+                cart = uiState.cart, 
+                onShowDetails = { showCartDialog = true },
+                onCheckout = { 
+                    viewModel.checkout()
+                    showCartDialog = false
+                }
+            )
         }
+    }
+
+    if (showCartDialog) {
+        CartDetailDialog(
+            cart = uiState.cart,
+            onDismiss = { showCartDialog = false },
+            onIncrease = { viewModel.addToCart(it) },
+            onDecrease = { viewModel.removeFromCart(it) },
+            onCheckout = {
+                viewModel.checkout()
+                showCartDialog = false
+            }
+        )
     }
 }
 
@@ -214,12 +252,76 @@ fun CategoryChip(category: Category, isSelected: Boolean, onClick: () -> Unit) {
 }
 
 @Composable
-fun CartSummary(cart: Map<Product, Int>, onCheckout: () -> Unit) {
+fun CartSummary(cart: Map<Product, Int>, onShowDetails: () -> Unit, onCheckout: () -> Unit) {
     val total = cart.entries.sumOf { it.key.price * it.value }
-    Column(modifier = Modifier.padding(vertical = 8.dp)) {
-        Text("Tổng cộng: $total VND", style = MaterialTheme.typography.titleLarge)
-        Button(onClick = onCheckout, modifier = Modifier.fillMaxWidth()) {
-            Text("Thanh toán & In hóa đơn")
+    val itemCount = cart.values.sum()
+    
+    Card(
+        modifier = Modifier.fillMaxWidth().clickable { onShowDetails() },
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+    ) {
+        Row(
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Column {
+                Text("Giỏ hàng ($itemCount món)", fontWeight = FontWeight.Bold)
+                Text("Tổng: $total VND", style = MaterialTheme.typography.titleMedium)
+            }
+            Button(onClick = onCheckout) {
+                Text("Thanh toán")
+            }
         }
     }
+}
+
+@Composable
+fun CartDetailDialog(
+    cart: Map<Product, Int>,
+    onDismiss: () -> Unit,
+    onIncrease: (Product) -> Unit,
+    onDecrease: (Product) -> Unit,
+    onCheckout: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Chi tiết đơn hàng") },
+        text = {
+            LazyColumn(modifier = Modifier.fillMaxWidth()) {
+                items(cart.entries.toList()) { (product, quantity) ->
+                    Row(
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(product.name, fontWeight = FontWeight.Bold)
+                            Text("${product.price * quantity} VND")
+                        }
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            IconButton(onClick = { onDecrease(product) }) {
+                                Text("-", style = MaterialTheme.typography.titleLarge)
+                            }
+                            Text("$quantity", modifier = Modifier.padding(horizontal = 8.dp))
+                            IconButton(onClick = { onIncrease(product) }) {
+                                Text("+", style = MaterialTheme.typography.titleLarge)
+                            }
+                        }
+                    }
+                }
+                item {
+                    val total = cart.entries.sumOf { it.key.price * it.value }
+                    HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+                    Text("Tổng cộng: $total VND", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                }
+            }
+        },
+        confirmButton = {
+            Button(onClick = onCheckout) { Text("Xác nhận đặt món") }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) { Text("Đóng") }
+        }
+    )
 }
