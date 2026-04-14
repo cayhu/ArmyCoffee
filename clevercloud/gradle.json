@@ -3,7 +3,7 @@
     "type": "gradle",
     "executable": "android_app/gradlew",
     "tasks": [":backend:shadowJar"],
-    "args": ["-PAPP_FOLDER=android_app"]
+    "args": ["-p", "android_app"]
   },
   "deploy": {
     "jar": "android_app/backend/build/libs/backend-all.jar"

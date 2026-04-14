@@ -1,0 +1,1 @@
+web: java -jar android_app/backend/build/libs/backend-all.jar
