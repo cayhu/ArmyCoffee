@@ -1,10 +1,9 @@
 {
   "build": {
     "type": "gradle",
-    "executable": "android_app/gradlew",
-    "goal": ":backend:shadowJar"
+    "executable": "android_app/gradlew"
   },
   "deploy": {
-    "jar": "android_app/backend/build/libs/backend-all.jar"
+    "goal": ":backend:shadowJar"
   }
 }
