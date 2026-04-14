@@ -1,7 +1,7 @@
 {
   "build": {
     "type": "gradle",
-    "executable": "android_app/gradlew",
+    "executable": "./gradlew",
     "tasks": [":backend:shadowJar"],
     "args": ["-p", "android_app"]
   },
