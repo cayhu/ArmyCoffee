@@ -1,9 +1,8 @@
 {
   "build": {
     "type": "gradle",
-    "executable": "./gradlew",
-    "tasks": [":backend:shadowJar"],
-    "args": ["-p", "android_app"]
+    "executable": "android_app/gradlew",
+    "goal": ":backend:shadowJar"
   },
   "deploy": {
     "jar": "android_app/backend/build/libs/backend-all.jar"
