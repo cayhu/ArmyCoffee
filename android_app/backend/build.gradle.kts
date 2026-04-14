@@ -13,6 +13,21 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:2.3.5")
     implementation("io.ktor:ktor-server-content-negotiation:2.3.5")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.5")
+    implementation("io.ktor:ktor-server-cors:2.3.5")
+    implementation("io.ktor:ktor-server-status-pages:2.3.5")
+
+    // Ktor Client for OpenAI calls
+    implementation("io.ktor:ktor-client-core:2.3.5")
+    implementation("io.ktor:ktor-client-cio:2.3.5")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.5")
+    implementation("io.ktor:ktor-client-serialization:2.3.5")
+    implementation("io.ktor:ktor-client-logging:2.3.5")
+
+    // Email Service
+    implementation("com.sun.mail:javax.mail:1.6.2")
+
+    // Firebase Admin SDK
+    implementation("com.google.firebase:firebase-admin:9.2.0")
 
     // Database
     implementation("org.jetbrains.exposed:exposed-core:0.44.1")

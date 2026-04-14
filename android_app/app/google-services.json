@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "891339023119",
+    "project_id": "armycoffee",
+    "storage_bucket": "armycoffee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891339023119:android:0b0f37a9d4eaa990efd47a",
+        "android_client_info": {
+          "package_name": "com.example.armycoffee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCQohL_iojW6AVhteJa4tIKLoE2dpy40w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

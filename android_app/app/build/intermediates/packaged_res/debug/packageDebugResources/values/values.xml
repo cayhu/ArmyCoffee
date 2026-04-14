@@ -8,4 +8,10 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
+    <string name="gcm_defaultSenderId" translatable="false">891339023119</string>
+    <string name="google_api_key" translatable="false">AIzaSyBCQohL_iojW6AVhteJa4tIKLoE2dpy40w</string>
+    <string name="google_app_id" translatable="false">1:891339023119:android:0b0f37a9d4eaa990efd47a</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBCQohL_iojW6AVhteJa4tIKLoE2dpy40w</string>
+    <string name="google_storage_bucket" translatable="false">armycoffee.firebasestorage.app</string>
+    <string name="project_id" translatable="false">armycoffee</string>
 </resources>
