@@ -14,10 +14,16 @@ import org.jetbrains.exposed.sql.transactions.transaction
 object DatabaseFactory {
     fun init() {
         val driverClassName = "org.postgresql.Driver"
-        // Clever Cloud cung cấp biến POSTGRESQL_ADDON_URI
-        val jdbcURL = System.getenv("POSTGRESQL_ADDON_URI") ?: "jdbc:postgresql://localhost:5432/army_coffee"
+        
+        // Lấy thông tin từ Clever Cloud
+        val host = System.getenv("POSTGRESQL_ADDON_HOST") ?: "localhost"
+        val port = System.getenv("POSTGRESQL_ADDON_PORT") ?: "5432"
+        val dbName = System.getenv("POSTGRESQL_ADDON_DB") ?: "army_coffee"
         val user = System.getenv("POSTGRESQL_ADDON_USER") ?: "postgres"
         val password = System.getenv("POSTGRESQL_ADDON_PASSWORD") ?: "123456"
+
+        // Xây dựng JDBC URL chuẩn
+        val jdbcURL = "jdbc:postgresql://$host:$port/$dbName"
 
         val database = Database.connect(createHikariDataSource(jdbcURL, user, password))
 
